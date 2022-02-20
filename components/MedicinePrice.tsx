@@ -33,23 +33,25 @@ export default function MedicinePrice({
       <h2 className="text-lg font-semibold col-span-12">{title}</h2>
       <p className="text-sm col-span-12">{subTitle}</p>
       <p className="text-xs font-thin col-span-12">{description}</p>
-      <p className="col-span-4 relative flex items-end">
+      <div className="col-span-4 relative flex items-end">
         <Price
           saying="from:"
           cross
           price={formatter.format(originalPrice / 100)}
         />
-      </p>
-      <p className=" flex items-end justify-center col-span-4 relative">
+      </div>
+
+      <div className="flex items-end justify-center col-span-4 relative">
         <Price saying="to:" price={formatter.format(currentPrice / 100)} />
-      </p>
-      <p className="col-span-4 relative flex justify-end">
+      </div>
+
+      <div className="col-span-4 relative flex justify-end">
         <Price
           saying="frequent"
           highlighted
           price={formatter.format(loyaltyPrice / 100)}
         />
-      </p>
+      </div>
     </article>
   );
 }
